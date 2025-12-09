@@ -4,8 +4,8 @@ terraform {
 
   backend "s3" {
     bucket         = "tfstate-cif0ip"
-    key            = "cmonthe2/repo/terraform.tfstate"
-    region         = "us-east-1"
+    key            = "cmonthe2/lambda/terraform.tfstate"
+    region         = var.region
     dynamodb_table = "tf-locks"
     encrypt        = true
   }
@@ -18,11 +18,12 @@ terraform {
   }
 }
 
+
 provider "aws" {
   region = "us-east-1"
   default_tags {
     tags = {
       ManagedBy = "Terraform"
     }
-}
+  }
 }
