@@ -5,7 +5,7 @@ terraform {
   backend "s3" {
     bucket         = "tfstate-cif0ip"
     key            = "cmonthe2/lambda/terraform.tfstate"
-    region         = var.region
+    region         = "us-east-1"
     dynamodb_table = "tf-locks"
     encrypt        = true
   }
@@ -14,6 +14,10 @@ terraform {
     aws = {
       source  = "hashicorp/aws"
       version = ">= 5.0"
+    }
+    archive = {
+      source  = "hashicorp/archive"
+      version = ">= 2.4.0"
     }
   }
 }
