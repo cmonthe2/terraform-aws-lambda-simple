@@ -5,7 +5,7 @@ terraform {
   backend "s3" {
     bucket         = "tfstate-cif0ip"
     key            = "cmonthe2/lambda/terraform.tfstate"
-    region         = "us-east-1"
+    region         = "us-west-2"
     dynamodb_table = "tf-locks"
     encrypt        = true
   }
