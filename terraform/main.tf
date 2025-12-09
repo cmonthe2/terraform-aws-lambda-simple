@@ -15,8 +15,8 @@ resource "aws_iam_role_policy" "lambda_policy" {
     Statement = concat(
       [
         {
-          Effect   = "Allow",
-          Action   = [
+          Effect = "Allow",
+          Action = [
             "logs:CreateLogGroup",
             "logs:CreateLogStream",
             "logs:PutLogEvents"
